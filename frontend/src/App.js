@@ -5,6 +5,8 @@ import {
   Route
 } from "react-router-dom";
 
+import { Toaster } from 'react-hot-toast';
+
 import TopMenu from './components/TopMenu';
 
 import Orders from './pages/Orders';
@@ -22,8 +24,10 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/cargar-pedido' element={<OrdersForm />} />
           <Route path='/pedidos' element={<Orders />} />
+          <Route path='/orders/:id' element={<OrdersForm />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
+        <Toaster />
       </OrderContainer>
     </div>
   );
